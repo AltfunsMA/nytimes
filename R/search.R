@@ -52,7 +52,7 @@ ny_search <- function(q, since = NULL, until = NULL, pages = 1, sort = c("newest
     response <- GET(url)
     stop_for_status(response)
     page_content <- content(response)
-    content <- append(content, page_content$response$docs)
+    content <- append(content, page_content$response)
 
     # check if results left
     hits <- page_content$response$meta$hits
